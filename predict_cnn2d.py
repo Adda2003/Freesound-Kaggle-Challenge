@@ -72,14 +72,37 @@ class InferenceDataset(Dataset):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='Inference for CNN2D MFCC model')
-    parser.add_argument('--data-dir', type=str, required=True, help='Path to wav files')
-    parser.add_argument('--model-path', type=str, required=True, help='Path to best_model.pth')
-    parser.add_argument('--csv-path', type=str, required=True, help='Path to train_curated.csv')
-    parser.add_argument('--eval-csv', type=str, default=None, help='CSV for evaluation mode')
-    parser.add_argument('--output-csv', type=str, default='submission_cnn2d.csv')
-    parser.add_argument('--batch-size', type=int, default=32)
-    parser.add_argument('--num-workers', type=int, default=4)
+    parser = argparse.ArgumentParser(
+        description='Inference for CNN2D MFCC model'
+    )
+    parser.add_argument(
+        '--data-dir', type=str, default='train_curated/',
+        help='Path to wav files (default: train_curated/)'
+    )
+    parser.add_argument(
+        '--model-path', type=str, required=True,
+        help='Path to best_model.pth'
+    )
+    parser.add_argument(
+        '--csv-path', type=str, default='train_curated.csv',
+        help='Path to metadata CSV (default: train_curated.csv)'
+    )
+    parser.add_argument(
+        '--eval-csv', type=str, default=None,
+        help='If set, run in evaluation mode against this CSV'
+    )
+    parser.add_argument(
+        '--output-csv', type=str, default='submission_cnn2d.csv',
+        help='Where to save your predictions (default: submission_cnn2d.csv)'
+    )
+    parser.add_argument(
+        '--batch-size', type=int, default=32,
+        help='Batch size (default: 32)'
+    )
+    parser.add_argument(
+        '--num-workers', type=int, default=4,
+        help='Number of DataLoader workers (default: 4)'
+    )
     return parser.parse_args()
 
 

@@ -20,16 +20,45 @@ MAX_FRAMES = int(np.ceil(SAMPLES / HOP_LENGTH))  # ~87
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Train 2D-CNN on MFCC features for audio tagging")
-    parser.add_argument('--data-dir', type=str, required=True, help='Path to train_curated/')
-    parser.add_argument('--csv-path', type=str, required=True, help='Path to train_curated.csv')
-    parser.add_argument('--batch-size', type=int, default=32)
-    parser.add_argument('--epochs', type=int, default=30)
-    parser.add_argument('--lr', type=float, default=1e-3)
-    parser.add_argument('--weight-decay', type=float, default=1e-4)
-    parser.add_argument('--checkpoint-dir', type=str, default='cnn2d_checkpoints')
-    parser.add_argument('--resume', action='store_true', help='Resume from latest checkpoint')
-    parser.add_argument('--num-workers', type=int, default=4)
+    parser = argparse.ArgumentParser(
+        description="Train 2D-CNN on MFCC features for audio tagging"
+    )
+    parser.add_argument(
+        '--data-dir', type=str, default='train_curated/',
+        help='Path to train_curated/ directory (default: train_curated/)'
+    )
+    parser.add_argument(
+        '--csv-path', type=str, default='train_curated.csv',
+        help='Path to train_curated.csv (default: train_curated.csv)'
+    )
+    parser.add_argument(
+        '--batch-size', type=int, default=32,
+        help='Number of samples per batch (default: 32)'
+    )
+    parser.add_argument(
+        '--epochs', type=int, default=30,
+        help='Number of training epochs (default: 30)'
+    )
+    parser.add_argument(
+        '--lr', type=float, default=1e-3,
+        help='Learning rate (default: 1e-3)'
+    )
+    parser.add_argument(
+        '--weight-decay', type=float, default=1e-4,
+        help='Weight decay (default: 1e-4)'
+    )
+    parser.add_argument(
+        '--checkpoint-dir', type=str, default='cnn2d_checkpoints',
+        help='Directory for saving checkpoints (default: cnn2d_checkpoints)'
+    )
+    parser.add_argument(
+        '--resume', action='store_true',
+        help='Resume from latest checkpoint'
+    )
+    parser.add_argument(
+        '--num-workers', type=int, default=4,
+        help='Number of DataLoader workers (default: 4)'
+    )
     return parser.parse_args()
 
 
