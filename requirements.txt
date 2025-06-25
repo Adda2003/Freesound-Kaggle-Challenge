@@ -1,0 +1,24 @@
+# Data handling
+pandas>=1.3.0
+numpy>=1.21.0
+
+# Audio I/O & feature extraction
+librosa>=0.8.0
+soundfile>=0.10.3
+
+# Plotting & visualization
+matplotlib>=3.4.0
+
+# Machine learning & metrics
+scikit-learn>=1.0.0
+tqdm>=4.60.0
+
+# PyTorch core
+torch>=1.10.0
+torchaudio>=0.10.0
+
+PyWavelets
+
+# (Optional) for yaml configs if you use them later
+pyyaml>=5.4.0
+
