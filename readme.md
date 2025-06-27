@@ -24,7 +24,6 @@ freesound-tagging/
 ├── predict_and_eval.py       # inference for train_model.py
 ├── wavelet_predict.py        # inference for wavelet_train.py
 ├── predict_cnn2d.py          # inference for train_cnn2d.py
-├── configs/                  # optional hyperparameter configs
 ├── requirements.txt          # Python dependencies
 └── README.md                 # this file
 ```
