@@ -36,7 +36,7 @@ def parse_args():
         help='Number of samples per batch (default: 32)'
     )
     parser.add_argument(
-        '--epochs', type=int, default=30,
+        '--epochs', type=int, default=50,
         help='Number of training epochs (default: 30)'
     )
     parser.add_argument(
@@ -48,8 +48,8 @@ def parse_args():
         help='Weight decay (default: 1e-4)'
     )
     parser.add_argument(
-        '--checkpoint-dir', type=str, default='cnn2d_checkpoints',
-        help='Directory for saving checkpoints (default: cnn2d_checkpoints)'
+        '--checkpoint-dir', type=str, default='new_checkpoints',
+        help='Directory for saving checkpoints (default: new_checkpoints)'
     )
     parser.add_argument(
         '--resume', action='store_true',

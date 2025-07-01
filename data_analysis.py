@@ -27,7 +27,6 @@ def parse_args():
 
 def load_metadata(csv_path):
     df = pd.read_csv(csv_path)
-    # Split multilabel strings into lists
     df['label_list'] = df['labels'].apply(lambda x: x.split(','))
     return df
 
@@ -98,7 +97,6 @@ def compute_duration_stats(df, data_dir):
 
 def main():
     args = parse_args()
-    # Ensure output directory exists
     os.makedirs(args.output_dir, exist_ok=True)
 
     df = load_metadata(args.csv_path)

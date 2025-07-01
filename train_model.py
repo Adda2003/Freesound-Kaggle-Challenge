@@ -22,7 +22,7 @@ def parse_args():
     parser.add_argument('--epochs', type=int, default=30)
     parser.add_argument('--lr', type=float, default=1e-4)
     parser.add_argument('--weight-decay', type=float, default=1e-5)
-    parser.add_argument('--checkpoint-dir', type=str, default='checkpoints')
+    parser.add_argument('--checkpoint-dir', type=str, default='checkpoints_cnn2d')
     parser.add_argument('--resume', action='store_true',
                         help='Resume training from latest checkpoint')
     parser.add_argument('--num-workers', type=int, default=4)
