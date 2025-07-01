@@ -21,6 +21,7 @@ freesound-tagging/
 ├── train_model.py            # 2D‑CNN on mel+delta+contrast
 ├── wavelet_train.py          # 1D‑CNN on DWT features
 ├── train_cnn2d.py            # 2D‑CNN on MFCC features
+|-- train.py                  # final script for multi-class and multi-label
 ├── predict_and_eval.py       # inference for train_model.py
 ├── wavelet_predict.py        # inference for wavelet_train.py
 ├── predict_cnn2d.py          # inference for train_cnn2d.py
